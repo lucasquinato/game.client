@@ -1,4 +1,6 @@
+import { $InputManager } from "./InputManagerSingleton.js";
 import { SceneModel } from "../scenes/SceneModel.js";
+import { LobbyScene } from "../scenes/LobbyScene.js";
 
 class SceneManagerSingleton {
     /**
@@ -23,9 +25,11 @@ class SceneManagerSingleton {
     #sceneActual;
 
     constructor() {
-        // this.#sceneRegister(new LobbyScene());
-        // this.#sceneActual = this.#scenes.get();
-        // this.#sceneActual.init();
+        $InputManager();
+
+        this.#sceneRegister(new LobbyScene());
+        this.#sceneActual = this.#scenes.get();
+        this.#sceneActual.init();
     }
 
     /**
@@ -62,6 +66,8 @@ class SceneManagerSingleton {
         this.#sceneActual = next;
         this.#sceneActual.init();
     }
+
+    getCurrentScene() { return this.#sceneActual; }
 }
 
 export function $SceneManager() {

@@ -78,11 +78,7 @@ class GameLoopSingleton {
         requestAnimationFrame(this.#loop.bind(this));
     }
 
-    stopGame() {
-        this.#running = false;
-
-        /** */
-    }
+    stopGame() { this.#running = false; }
 }
 
 export function $GameLoop() {

@@ -14,4 +14,8 @@ export class SceneModel {
      * @param { CanvasRenderingContext2D } context
      */
     render(context) { /** */ }
+
+    onClick({ x, y, isDown }) { /** */ }
+
+    onHover({ x, y }) { console.log({ x, y }); }
 }
