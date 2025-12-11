@@ -7,17 +7,12 @@ export class Lobby extends Scene {
     constructor(sceneChanger) {
         super(SCENES.NAME.LOBBY);
 
-        this.sceneChanger = (name) => {
-            sceneChanger.scene_CHANGE(name);
-        };
-
         this.mapRender = new IsoMap(LOBBY_MAP);
+        this.sceneChanger = (name) => sceneChanger.scene_CHANGE(name);
     }
 
     /**
      * @param { CanvasRenderingContext2D } context
      */
-    render(context) {
-        this.mapRender.draw(context);
-    }
+    render(context) { this.mapRender.drawMap(context); }
 }
