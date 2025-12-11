@@ -8,14 +8,15 @@ export class IsoMap {
     /**
      * @param {{ width: number, height: number, layers: {} }} mapData 
      */
-    constructor(mapData) {
+    constructor(mapData, player = null) {
         this.width = mapData.width;
         this.height = mapData.height;
         this.layers = mapData.layers;
 
+        this.player = player;
+        this.player.map = this;
         this.mapInterations = new IsoMapInput(this);
     }
-
     /**
      * @param { CanvasRenderingContext2D } context
      */

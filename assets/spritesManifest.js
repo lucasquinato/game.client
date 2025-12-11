@@ -6,7 +6,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34},
         },
     },
     1002: {
@@ -16,7 +16,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
     1003: {
@@ -26,7 +26,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
     1004: {
@@ -36,7 +36,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
 
@@ -47,7 +47,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
     1006: {
@@ -57,7 +57,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
     1007: {
@@ -67,7 +67,7 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
         },
     },
     1008: {
@@ -77,7 +77,88 @@ export const $Sprites = {
             frames: 8,
             frameWidth: 48,
             frameHeight: 64,
-            anchor: { x: 24, y: 42 },
+            anchor: { x: 24, y: 34 },
+        },
+    },
+
+    2001: {
+        name: "characters:sprites:critter:idle:ld",
+        imageSrc: "/assets/public/characters/critter/idle_ld.png",
+        metadata: {
+            frames: 24,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2002: {
+        name: "characters:sprites:critter:idle:lu",
+        imageSrc: "/assets/public/characters/critter/idle_lu.png",
+        metadata: {
+            frames: 24,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2003: {
+        name: "characters:sprites:critter:idle:rd",
+        imageSrc: "/assets/public/characters/critter/idle_rd.png",
+        metadata: {
+            frames: 24,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2004: {
+        name: "characters:sprites:critter:idle:ru",
+        imageSrc: "/assets/public/characters/critter/idle_ru.png",
+        metadata: {
+            frames: 24,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2005: {
+        name: "characters:sprites:critter:walk:ld",
+        imageSrc: "/assets/public/characters/critter/walk_ld.png",
+        metadata: {
+            frames: 11,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2006: {
+        name: "characters:sprites:critter:walk:lu",
+        imageSrc: "/assets/public/characters/critter/walk_lu.png",
+        metadata: {
+            frames: 11,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2007: {
+        name: "characters:sprites:critter:walk:rd",
+        imageSrc: "/assets/public/characters/critter/walk_rd.png",
+        metadata: {
+            frames: 11,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
+        },
+    },
+    2008: {
+        name: "characters:sprites:critter:walk:ru",
+        imageSrc: "/assets/public/characters/critter/walk_ru.png",
+        metadata: {
+            frames: 11,
+            frameWidth: 32,
+            frameHeight: 41,
+            anchor: { x: 18, y: 26 },
         },
     },
 };
