@@ -1,6 +1,6 @@
 export const CANVAS_RESOLUTION = {
-    WIDTH: 480,
-    HEIGHT: 270,
+    WIDTH: 320,
+    HEIGHT: 180,
 };
 
 export const SCENES = {

@@ -12,7 +12,13 @@ export class Lobby extends Scene {
     }
 
     /**
+     * @param { number } deltaTime
+     */
+    update(deltaTime) {  }
+    /**
      * @param { CanvasRenderingContext2D } context
      */
-    render(context) { this.mapRender.drawMap(context); }
+    render(context) {
+        this.mapRender.drawMap(context);
+    }
 }
