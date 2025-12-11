@@ -35,9 +35,8 @@ export class GameLoop {
      * @param { number } deltaTime
      */
     #processSceneUpdate(deltaTime) {
-        console.log(deltaTime);
+        // console.log(deltaTime);
 
-        //
         this.gameScene.scene_UPDATE(deltaTime);
     }
     /**
@@ -46,7 +45,6 @@ export class GameLoop {
     #processSceneRenderer(context) {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
-        //
         this.gameScene.scene_RENDER(context);
     }
 
