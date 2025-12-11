@@ -13,8 +13,5 @@ export class Battle extends Scene {
     /**
      * @param { CanvasRenderingContext2D } context
      */
-    render(context) {
-        context.fillStyle = "blue";
-        context.fillRect(0, 0, context.canvas.width, context.canvas.height);
-    }
+    render(context) { }
 }
