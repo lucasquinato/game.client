@@ -3,6 +3,7 @@ import { GameLoop } from "./GameLoop.js";
 
 import { Scene } from "../../game/scenes/SceneModel.js";
 import { Lobby } from "../../game/scenes/Lobby/LobbyScene.js";
+import { Battle } from "../../game/scenes/Battle/BattleScene.js";
 
 export class GameScenes {
     /**
@@ -26,7 +27,7 @@ export class GameScenes {
 
     scene_ADD() {
         this.scene_REGISTER(new Lobby(this));
-        // this.scene_REGISTER(new Battle(this));
+        this.scene_REGISTER(new Battle(this));
 
         console.log("As cenas registradas foram adicionadas ao Game.");
         if (!this.#sceneCurrent) {

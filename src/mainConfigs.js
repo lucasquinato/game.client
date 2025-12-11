@@ -7,5 +7,6 @@ export const SCENES = {
     NAME: {
         DEFAULT: "Lobby",
         LOBBY: "Lobby",
+        BATTLE: "Battle",
     },
 };
