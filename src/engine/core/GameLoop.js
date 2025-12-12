@@ -1,6 +1,10 @@
 import { $Canvas } from "../Canvas.js";
+import { GameScenes } from "./GameScenes.js";
 
 export class GameLoop {
+    /**
+     * @type { CanvasRenderingContext2D | null }
+     */
     #context = $Canvas().context;
     /**
      * @type { number | null }
@@ -14,22 +18,22 @@ export class GameLoop {
      * @type { boolean }
      */
     #running = false;
-
-    constructor(gameScene) { this.gameScene = gameScene; }
-
     /**
-     * @param { number } timestamp
+     * @param { GameScenes } gameScene
      */
-    #loop(timestamp) {
-        if (!this.#running) return;
-        if (!this.#lastTimestamp) this.#lastTimestamp = performance.now();
-        this.#deltaTime = (timestamp - this.#lastTimestamp) / 1000;
-        this.#lastTimestamp = timestamp;
+    constructor(gameScene) {
+        this.gameScene = gameScene;
+    }
 
-        this.#processSceneUpdate(this.#deltaTime);
-        this.#processSceneRenderer(this.#context);
+    loop_PAUSE() { this.#running = false; }
 
-        requestAnimationFrame(this.#loop.bind(this));
+    loop_START() {
+        if (!this.#running) {
+            this.#running = true;
+            this.#lastTimestamp = null;
+
+            requestAnimationFrame(this.#loop.bind(this));
+        }
     }
     /**
      * @param { number } deltaTime
@@ -47,15 +51,18 @@ export class GameLoop {
 
         this.gameScene.scene_RENDER(context);
     }
+    /**
+     * @param { number } timestamp
+     */
+    #loop(timestamp) {
+        if (!this.#running) return;
+        if (!this.#lastTimestamp) this.#lastTimestamp = performance.now();
+        this.#deltaTime = (timestamp - this.#lastTimestamp) / 1000;
+        this.#lastTimestamp = timestamp;
 
-    loop_START() {
-        if (!this.#running) {
-            this.#running = true;
-            this.#lastTimestamp = null;
+        this.#processSceneUpdate(this.#deltaTime);
+        this.#processSceneRenderer(this.#context);
 
-            requestAnimationFrame(this.#loop.bind(this));
-        }
+        requestAnimationFrame(this.#loop.bind(this));
     }
-
-    loop_PAUSE() { this.#running = false; }
 }

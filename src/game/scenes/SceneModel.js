@@ -6,4 +6,6 @@ export class Scene {
 
     update(deltaTime) {}
     render(context) {}
+
+    handle_INPUT(inputEvent) { console.log(inputEvent); }
 }

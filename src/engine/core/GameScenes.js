@@ -5,6 +5,8 @@ import { Scene } from "../../game/scenes/SceneModel.js";
 import { Lobby } from "../../game/scenes/Lobby/LobbyScene.js";
 import { Battle } from "../../game/scenes/Battle/BattleScene.js";
 
+import { InputManager } from "./InputManager.js";
+
 export class GameScenes {
     /**
      * @type { Map<string, Scene> }
@@ -14,15 +16,37 @@ export class GameScenes {
      * @type { Scene | null }
      */
     #sceneCurrent = null;
-
+    /**
+     * @param {{ ready: boolean }} param0 
+     */
     constructor({ ready }) {
         this.scene_ADD();
         this.ready = ready;
         this.loop = new GameLoop(this);
+        this.input = new InputManager(this);
 
         if (this.ready && this.#sceneCurrent) {
             this.loop.loop_START();
         }
+    }
+    /**
+     * 
+     * @param {{ type: string, x: number, y: number, raw: MouseEvent }} inputEvent 
+     * @returns 
+     */
+    event_INPUT(inputEvent) {
+        if (!this.#sceneCurrent) return;
+        const scene = this.#sceneCurrent;
+        if (typeof scene.handle_INPUT === "function") {
+            scene.handle_INPUT(inputEvent);
+        }
+    }
+
+    event_DESTROY() {
+        if (this.input && typeof this.input.input_DESTROY === "function") {
+            this.input.input_DESTROY();
+        }
+        this.loop.loop_PAUSE();
     }
 
     scene_ADD() {

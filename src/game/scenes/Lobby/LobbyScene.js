@@ -3,14 +3,14 @@ import { SCENES } from "../../../mainConfigs.js";
 import { LOBBY_MAP } from "./data/LobbyMap.js";
 import { Scene } from "../SceneModel.js";
 
-import { Player } from "../../entities/Player.js";
-import { Critter } from "../../entities/Critter.js";
+import { Hana } from "../../entities/Players/Hana.js";
+import { Critter } from "../../entities/NPCs/Critter.js";
 
 export class Lobby extends Scene {
     constructor(sceneChanger) {
         super(SCENES.NAME.LOBBY);
 
-        this.player = new Player(2, 2);
+        this.player = new Hana(2, 2);
         this.mapRender = new IsoMap(LOBBY_MAP, this.player);
 
         this.critter = new Critter(4, 4, this.mapRender);
